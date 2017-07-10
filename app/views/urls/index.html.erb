@@ -1,0 +1,14 @@
+<h1>URL Shortener</h1>
+
+<%= form_for @url do |f| %>
+    <%= f.label :old_url %>
+    <%= f.text_field :old_url %>
+    <%= f.submit %>
+<%end%>
+
+<br>
+
+Shortened URLs<br>
+<% @urls.each do |url| %>
+<%= link_to "/url/#{url.new_url}", new_url_path(url) %><br>
+<% end %>
